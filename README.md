@@ -21,3 +21,5 @@ ________________________________
 - VisulaCode: https://code.visualstudio.com/docs/editor/github
 - Notepad++: https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-set-Notepad-as-the-default-Git-editor-for-commits-instead-of-Vim
 - Atom: https://www.hongkiat.com/blog/manage-git-github-atom/
+________________________________
+additional source: https://www.edureka.co/blog/how-to-use-github/

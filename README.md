@@ -1,5 +1,5 @@
 # Creating a branch
-Branching: Branches help you to work on different versions of a repository at one time:
+Branches help you to work on different versions of a repository at one time:
  https://docs.github.com/en/get-started/quickstart/hello-world#creating-a-branch
 
 # Committing changes

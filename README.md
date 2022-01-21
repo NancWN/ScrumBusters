@@ -1,14 +1,19 @@
 # Creating a branch
-https://docs.github.com/en/get-started/quickstart/hello-world#creating-a-branch
+Branching: Branches help you to work on different versions of a repository at one time:
+ https://docs.github.com/en/get-started/quickstart/hello-world#creating-a-branch
 
-# Making and committing changes
-https://docs.github.com/en/get-started/quickstart/hello-world#making-and-committing-changes
+# Committing changes
+This operation helps you to save the changes in your file.
+You should always provide the commit message to help other contributors to understand the file better ;)
+ https://docs.github.com/en/get-started/quickstart/hello-world#making-and-committing-changes
 
 # Pull request
-making your changes visible for everyone: 
+Shows the changes done in the file and ask other contributors to view it. 
+It compares the changes which are done in the file and if there are any conflicts, you can manually resolve it: 
  https://docs.github.com/en/get-started/quickstart/hello-world#opening-a-pull-request
 
-# Merge your pull request
+# Merge request
+Merge the changes into the main master branch.You can delete the branch once all the changes have been incorporated and if there are no conflicts:
 https://docs.github.com/en/get-started/quickstart/hello-world#merging-your-pull-request
 
 ________________________________

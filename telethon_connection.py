@@ -1,4 +1,3 @@
-
 # imports
 from telethon.sync import TelegramClient
 from telethon.tl.functions.messages import ImportChatInviteRequest, GetHistoryRequest
@@ -8,7 +7,7 @@ api_hash = '4411841d81d92fa47f4052a5ad9a1dd0'
 
 testing = True
 if testing:
-    limit = 100
+    limit = 5
 else:
     limit=None
 
@@ -29,7 +28,7 @@ for channel in channel_list[:100]:
         client(JoinChannelRequest(channel))
     except Exception as e:
         print(e)
-        # continue
+        continue
 ## loop is done, we're in all channels
 
 # access all open dialogs
@@ -45,10 +44,11 @@ from datetime import datetime as dt
 # instantiate empty dict to collect all messages
 msg_dict = {}
 
-# iterate over all the chats and messages to save them
-# this normally is BAD PRACTICE! There are better ways than using loops. 
-# It's ok in this instance because this is supposed to run a single time
-# and it is a case of asynchronous programming 
+
+#using a list comprehension to iterate over all the chats
+#msg_dict = [[message for chat in char_lisr] for message in client.iter_messages(chat,limit=limit)]
+
+
 for chat in chat_list:
     for message in client.iter_messages(chat,limit=limit):
         try: 
@@ -63,6 +63,7 @@ for chat in chat_list:
             )
         except:
             text=''
+            
         date = message.date
         id = str(message.sender_id)
         message_id = str(message.id)+'_'+chat+'_'+date.strftime('%Y-%m-%d')
@@ -81,8 +82,8 @@ import pandas as pd
 msg_df = pd.DataFrame.from_dict(msg_dict,orient='index') 
 # print(msg_df)
     # print(message.sender_id, ':', message.text,':',message.date)
-msg_df.to_csv('data/raw/messages.csv')
+msg_df.to_csv('data/sample/messages.csv')
 
 
 # send me an update message
-client.send_message('MikeTelethon', 'Last task done')
+client.send_message('me', 'Last task done')

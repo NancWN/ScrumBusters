@@ -52,7 +52,15 @@ msg_dict = {}
 for chat in chat_list:
     for message in client.iter_messages(chat,limit=limit):
         try: 
-            text = message.text.replace(',','')
+            text = (
+                message.text
+                .replace(',','')
+                .replace("'",'')
+                .replace('**','')
+                .replace('\n','.')
+                .replace('##','')
+                .lower()
+            )
         except:
             text=''
         date = message.date

@@ -48,7 +48,7 @@ msg_dict = {}
 #using a list comprehension to iterate over all the chats
 list_comp=[message for chat in chat_list for message in client.iter_messages(chat,limit=limit)]
 
-#parameter die helfen durch die  durch die list_comp zu iterarieren
+#parameter die helfen durch die list_comp zu iterarieren
 end=limit
 start=0
 

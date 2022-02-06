@@ -8,12 +8,12 @@ api_hash = '4411841d81d92fa47f4052a5ad9a1dd0'
 
 testing = True
 if testing:
-    limit = 5
+    limit = 100
 else:
     limit=None
 
 # create client
-client = TelegramClient('m', api_id, api_hash)
+client = TelegramClient('0602b', api_id, api_hash)
 client.start()
 
 # join a public channels via the invite link
@@ -24,7 +24,7 @@ with open(path, 'rb') as f:
     channel_list = pickle.load(f)   
 
 from telethon.tl.functions.channels import JoinChannelRequest
-for channel in channel_list[:5]:
+for channel in channel_list[:100]:
     try:
         client(JoinChannelRequest(channel))
     except Exception as e:
@@ -52,7 +52,7 @@ msg_dict = {}
 for chat in chat_list:
     for message in client.iter_messages(chat,limit=limit):
         try: 
-            text = (
+            text = str(
                 message.text
                 .replace(',','')
                 .replace("'",'')
@@ -64,7 +64,7 @@ for chat in chat_list:
         except:
             text=''
         date = message.date
-        id = message.sender_id
+        id = str(message.sender_id)
         message_id = str(message.id)+'_'+chat+'_'+date.strftime('%Y-%m-%d')
         update = {
             message_id:{

@@ -17,7 +17,7 @@ else:
     limit=None
 
 # create client
-client = TelegramClient('0602b', api_id, api_hash)
+client = TelegramClient('1202a', api_id, api_hash)
 client.start()
 
 # join a public channels via the invite link
@@ -44,8 +44,12 @@ msg_df=[]
 n=80
 batches = list(divide_batch(channel_list, n))
 
+# create a batch id
+batch_id = 0
+
 #iterate through first batch
-for channels in batches:
+for channels in batches[:4]:
+    batch_id = batch_id+1
     for i in channels:
         try:
             client(JoinChannelRequest(i))
@@ -69,8 +73,10 @@ for channels in batches:
 
 
     #using a list comprehension to iterate over all the chats
-    list_comp=[message for chat in chat_list for message in client.iter_messages(chat,limit=limit)]
-
+    try:
+        list_comp=[message for chat in chat_list for message in client.iter_messages(chat,limit=limit)]
+    except:
+        ValueError
     #parameter die helfen durch die list_comp zu iterarieren
     end=limit
     start=0
@@ -111,7 +117,7 @@ for channels in batches:
         start=start+limit
 
     msg_df = pd.DataFrame.from_dict(msg_dict,orient='index') 
-    msg_df.to_csv('data/sample/messages.csv', mode='a')
+    msg_df.to_csv('data/chats/messages_batch{}.csv'.format(str(batch_id)), mode='a')
 
     #leaving all channels
     for i in channels:

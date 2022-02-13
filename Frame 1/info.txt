@@ -1,0 +1,12 @@
+Collect Information
+
+- 1. Collect Telegram Messages
+	- a. join Pump and Dump Telegram groups
+	- b. collect the Chat Messages from the Groups with an API and fetch.
+	- b. Filter Messages by specific Keywords
+
+- 2. Collect financial Data
+	- a. Historical Data
+		- i. OHLC Data from
+	- b. Current Data (to stay updated and use it)
+		- i. Binance API

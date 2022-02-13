@@ -1,0 +1,2 @@
+- Evaluate the model
+- Compare new model to current prod-model and requirements

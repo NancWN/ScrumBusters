@@ -1,0 +1,5 @@
+- 1. feature engineering (?)
+
+- 2. Generate stats pre and post (?)
+
+- 3. Transformation (?)

@@ -1,0 +1,5 @@
+- 1. Load the data
+
+- 2. Randomize order
+
+- 3. Rename columns

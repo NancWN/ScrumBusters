@@ -1,0 +1,18 @@
+Collect Information
+
+- 1. Collect Telegram Messages
+	- a. join Pump and Dump Telegram groups
+	- b. collect the Chat Messages from the Groups with an API and fetch.
+	- b. Filter Messages by specific Keywords
+	- c. Label Messages by "True" is Pum-relevant or "False" is not Pumprelevant
+
+- 2. Collect financial Data
+	- a. Historical Data
+		- i. OHLC Data from
+	- b. Current Data (to stay updated and use it)
+		- i. Binance API
+
+- 3. Combine Chat and Financial Data
+	- a. Determine Pump start from Telegram Messages with Pairname and Time
+	- b. Determine Pump End from financial Data as Time
+		- i. print financial Pump period (Start-date + OHLC to End-date + OHLC)

@@ -8,7 +8,7 @@ api_hash = '4411841d81d92fa47f4052a5ad9a1dd0'
 
 testing = True
 if testing:
-    limit = 20
+    limit = 200
 else:
     limit=None
 

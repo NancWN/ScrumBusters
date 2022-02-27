@@ -19,7 +19,7 @@ client.start()
 # join a public channels via the invite link
 # load join urls
 import pickle
-path = 'data/tele.pickle'
+path = 'Frame 1/Telegram/data/tele.pickle'
 with open(path, 'rb') as f:
     channel_list = pickle.load(f)   
 batch_number = 5
@@ -95,7 +95,8 @@ import pandas as pd
 msg_df = pd.DataFrame.from_dict(msg_dict,orient='index') 
 # print(msg_df)
     # print(message.sender_id, ':', message.text,':',message.date)
-msg_df.to_csv('data/raw/messages_batch{}_old.csv'.format(str(batch_number)))
+msg_df.to_csv('Frame 1/Telegram/data/sample/messages_batch{}_old.csv'.format(str(batch_number)))
+
 
 
 # send me an update message

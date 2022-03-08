@@ -1,0 +1,15 @@
+name: busters
+conda_env: conda.yaml
+
+entry_points:
+  model_run:
+    parameters:
+      dataset_id: {type: str,default: 'newest'}
+      random_state: {type: int, default: 0}
+      test_size: {type: float, default: 0.2}
+      data_root: {type: str, default: 'data/engineered/'}
+      n_iterations: {type: int, default: 5}
+      n_crossvals:  {type: int, default: 2}
+      transformation: {type:str, default: 'zscore'}
+
+    command: 'python model_run.py -r {data_root} {dataset_id} {random_state} {test_size} {n_iterations} {n_crossvals}'

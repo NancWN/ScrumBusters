@@ -1,0 +1,10 @@
+name: busters_pipeline
+channels:
+ - defaults
+ - conda-forge
+dependencies:
+ - conda:
+   - dvc
+   - sklearn
+   - mlflow
+   - python-utils

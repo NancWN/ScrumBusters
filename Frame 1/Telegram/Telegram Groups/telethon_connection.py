@@ -22,7 +22,7 @@ import pickle
 path = 'Frame 1/Telegram/data/tele.pickle'
 with open(path, 'rb') as f:
     channel_list = pickle.load(f)   
-batch_number = 5
+batch_number = 1
 batch = channel_list[80*batch_number:80*(batch_number+1)]
 
 from telethon.tl.functions.channels import JoinChannelRequest
@@ -95,7 +95,7 @@ import pandas as pd
 msg_df = pd.DataFrame.from_dict(msg_dict,orient='index') 
 # print(msg_df)
     # print(message.sender_id, ':', message.text,':',message.date)
-msg_df.to_csv('Frame 1/Telegram/data/sample/messages_batch{}_old.csv'.format(str(batch_number)))
+msg_df.to_csv('data/raw/messages_batch{}_old.csv'.format(str(batch_number)))
 
 
 
